@@ -1,0 +1,288 @@
+@charset "utf-8";
+
+/* CSS Document */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+	vertical-align:middle;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	color: black;
+	background: #45789C
+url(http://knsue.com/pe2kasb/v2/body.blue.gif) repeat;
+	min-width: 100%;
+	max-width: 100%;
+	overflow: auto;
+
+
+
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+/*end CSS reset*/
+
+#calculator {
+}
+
+body {
+font-family: DejaVu Sans, Verdana, sans-serif;
+font-size: 90%;
+}
+
+table {
+width: 98%;
+}
+.number{
+	float: right;
+	height: 12em;
+	width: 79%;
+/*	min-width: 1141px;*/
+	border: black thin solid;
+	margin-bottom: 1%;
+	display: none;
+}
+#one{
+	background-color:#F69;
+	display: block;
+}
+#two{
+	background-color:#FF9;
+	display: block;
+}
+#three{
+	background-color:#9F9;
+}
+#four{
+	background-color:#9FF;
+}
+#five{
+	background-color:#C9F;
+}
+#six{
+	background-color:#FC6;
+}
+.calc{
+	float: left;
+	background-color:#999;	
+	height: 1%;
+	margin-left: 3%;
+	margin-top: 1%;
+}
+.calc ul {
+	
+}
+.menu{
+	background-color:#FFF;
+	width: 15%;
+	min-width: 270px;
+	font-size: 80%;
+}
+.menu td{
+	border-bottom: black 1px solid;
+}
+ul {
+	float:left;
+	margin-left:3%;
+	height: 11em;
+}
+li {
+	margin-top:10%;
+	text-align:center;
+}
+.label {
+	font-weight: bold;
+}
+.topmenu{
+background: white;
+text-align:center;
+width: 99%;
+height: 1em;
+margin-bottom: 1%;
+padding: .4%;
+}
+.explain {
+	border-bottom: 1px dotted black;
+	color: black;
+	background: none;
+	cursor: help;
+}
+#topdesc {
+background: white;
+text-align:center;
+width: 99%;
+margin-bottom: 1%;
+margin-top: 1%;
+display: none;
+}
+.desc{
+overflow: visible; 
+height: 100%;
+width: 100%;
+}
+
+.dmg{
+background:#FFC4C4;
+}
+.nrg{
+background:#B9B9FF;
+}
+.nrgdmg{
+background:#FFA8FF;
+}
+.hit{
+background: #FFFFC4;
+}
+.special{
+background:#B7FFB7;
+border: 1px solid black;
+}
+.specialcapture{
+background:#B7FFB7;
+border: 1px solid black;
+}
+.sprite{
+float:left;
+width:96px;
+margin-right: 1%;
+}
+.none{
+display:none;
+}
+#attacks {
+}
+.atkdesc{
+overflow: visible; 
+height: 100%; 
+width: 100%;
+}
+#abilities {
+}
+#statuses{
+}
+#statuses table{
+padding: 1%;
+margin-left: 1%;
+margin-bottom: 1%;
+background:white;
+}
+#fieldeffects{
+}
+#critical{
+display: none;
+} 
+#safari{
+background:white;
+}
+#stats{
+}
+.safariroll{
+float: left;
+width: 95%;
+margin-left:1%;
+margin-top:1%;
+margin-right:1%;
+background:white;
+}
+.zonemenu {
+text-align:center;
+margin-top: 1%;
+border-top: thin solid black;
+}
+.zonemenu img {
+cursor:pointer;
+}
+#sprite_1{
+}
+#sprite_2{
+}
+#sprite_3{
+}
+#sprite_4{
+}
+#sprite_5{
+}
+#sprite_6{
+}
+#capturemenu{
+display: none;
+}
+#battlemenu{
+}
+#capturedesc{
+display: none;
+}
+.capture{
+border: 1px black solid;
+}
+.status{
+border: 1px black solid;
+background: #ACE5EE;
+}
+.ball{
+border: 1px black solid;
+background: #F0DC82;
+}
+
+a {
+cursor:pointer;
+color: #A4DDED;
+font-weight: bold;
+}
+
+a:hover{
+color: #E32636;
+font-size: 110%;
+}
+
+a:visited{
+color: black;
+}
+
+.calcchange{
+cursor:pointer;
+/*text-decoration:underline;*/
+}
+
+.calcchange:hover{
+color: green;
+font-size: 105%;
+}
+
+.content{display: none;}
+
+.superwidth{ width: 100% !important; }

@@ -1,0 +1,257 @@
+if you do not like math, turn away now.
+this is not required reading. it is optional. 
+it is only for documentation, emergency and transparency purposes.
+
+If you've decided to stay, this is just a list of all the formulae that ASBL uses. 
+Also good to use if I happen to break the Compendium during an update, which is likely. (see changelog, 3rd update)
+
+All decimal values are rounded up to the nearest whole integer in all cases.
+
+This was last updated 13:48 1/26/2014.
+The above statement implies that this time and date shown there is the last time the game was "significantly" altered OR a major typo in this document was fixed.
+
+**POKEMON STATISTICS**
+
+ATK = ATK_Q/15
+DEF = ((DEF_Q + HP_Q)/2)/13
+SPATK = SPATK_Q/15
+SPDEF = ((SPDEF_Q + HP_Q)/2)/13
+SPD = SPD_Q
+TOTAL = ATK + DEF + SPATK +SPDEF + (SPD_Q/36)
+AVERAGE = TOTAL/5
+
+where Q is the original in game stat as of the sixth generation
+
+EXP =
+	_____________________________________________________________________________________________________
+	| EXP | Evolutions Occured | Evolutions To Go | Other                                                |
+	-----------------------------------------------------------------------------------------------------
+	| 2   | 0                  | 1                | Defined as Baby by Bulbapedia                        |
+	-----------------------------------------------------------------------------------------------------
+	| 3   | 0                  | 2                | Basic Pokemon                                        |
+	-----------------------------------------------------------------------------------------------------
+	| 4   | 0                  | 1                | Basic Pokemon                                        |
+	-----------------------------------------------------------------------------------------------------
+	| 6   | 1                  | 1                | Stage 1 Pokemon (or, Basics that evolve from Babies) |
+	-----------------------------------------------------------------------------------------------------
+	| 7   | 1                  | 0                | Stage 1 Pokemon                                      |
+	-----------------------------------------------------------------------------------------------------
+	| 8   | 0                  | 0                | Basic Pokemon                                        |
+	-----------------------------------------------------------------------------------------------------
+	| 9   | 2                  | 0                | Stage 2 Pokemon                                      |
+	-----------------------------------------------------------------------------------------------------
+
+
+HABITAT
+	FRLG. 4th/5th Generation Pokemon and Legendaries were hand sorted by following method:
+		*	Evolutionary families all belong in FRLG assigned zone
+		*	Rare habitat was divided, legendaries spread out
+		*	Common themes were followed. Cave is home to many Ice types, Rough Terrain is home to Pokemon found in-game Deserts
+		*	Used Dex/In game location to categorize otherwise
+
+**ATTACKS**
+	EFFECT MODIFERS
+		Hand chosen by paperfairy and Lord Khajmer. If you've improvements or suggestions, please offer them up.
+
+	DESCRIPTIONS
+		See "effect modifers".
+		
+	PRIORITY + IMPACT
+		Taken from the games with no modification.
+
+Attacks that dealt with items but had a BP had their effects removed. Attacks that dealt with items without a set BP were banned. 
+Feel free to suggest alternatives, but since none of the attacks are a big deal, they're likely to stay banned.
+
+**ABILITIES**
+	Gens 3 and 4 Abilities were done by Elbub and Mitsuzo-kun, with a slight retooling by paperfairy. 
+	Gen 5 Abilities were done by paperfairy. Item-related abilities were banned or retooled. 
+	Retooling was only done if a Pokemon would not have an ability otherwise. 
+	Honey Gather and Frisk are exceptions because paperfairy couldn't think of anything at all for them that made sense. 
+	Feel free to suggest alternatives, but seeing as how Gothielle's line nor Combee are groundbreaking, they're likely to stay banned.
+
+**ITEMS**
+	There is a shop downtown that has had no customers
+
+**SHADOW POKEMON/SHADOW MOVES**
+	It's not happening.
+
+**CRITICAL LEVELS, ACCURACY, SPEED, TYPE MATCHUPS**
+	All four of these are taken straight from the games/Bulbapedia/PKMNDB as of Gen 6. I
+	f you're reading this and you want to see formulae here anyways, contact paperfairy. 
+	Otherwise, they'll stay like this. (see: http://bulbapedia.bulbagarden.net/wiki/Stats) 
+
+**DAMAGE FORMULA**
+	(BP * C * T * S * AvD)/X
+		
+		BP = Base Power of attack.
+		X  exists to weaken attacks for ASB purposes, and changes depending on the target's defense stat.
+			_________________________________
+			| DEF or SPDEF is    | X becomes |
+			|--------------------------------|
+			| 1, 2, or 3         |    5      |
+			|--------------------------------|
+			| 4, 5, or 6         |    7      |
+			|--------------------------------|
+			| 7, 8, 9, 10        |    10     |
+			|--------------------------------|
+			| 11, 12, 13, 14, 15 |    12     |
+			|--------------------------------|
+			| 16, 17, 18, 19, 20 |    15     |
+			|--------------------------------|
+			| 21, 22, 23, 24, 25 |    17     |
+			|--------------------------------|
+			| 26, 27, 28, 29, 30 |     20    |
+			|--------------------------------|
+
+			C = If critical, C is 2. Otherwise, C is 1.
+			T = Type multiplier, which applies as:
+			_________________________________
+			| Type Effectiveness | T becomes |
+			|--------------------------------|
+			| x8 or greater      |    1.9    |
+			|--------------------------------|
+			| x4                 |    1.5    |
+			|--------------------------------|
+			| x2                 |    1.2    |
+			|--------------------------------|
+			| x1                 |    1      |
+			|--------------------------------|
+			| x.5                |    .8     |
+			|--------------------------------|
+			| x.25               |   .5      |
+			|--------------------------------|
+			| x.125 or less      |     .1    |
+			|--------------------------------|			
+
+			S = If attack has STAB, S = 1.2 Otherwise, S is 1.
+			AvD = (1+((A-D)/10))
+				D = Target's appropriate DEF/SPDEF stat
+				A = User's appropriate ATK/SPATK stat
+					AvD cannot be lower than .1
+
+**ENERGY FORMULA**
+	((BP/20) * S)^(1 + (10 - EXP)/10) + M
+		BP = Base Power of attack.
+		20 exists to lower energy costs for ASB purposes.
+		If attack has STAB, S = 1. Otherwise, S is 1.5.
+		EXP = current EXP level of user.	
+		M = Effect Modifier, if any.
+
+**STATUSES**
+	Invented by Elbub. They made sense, I didn't alter them much.
+
+**CAPTURE SUCCESS PERCENTAGE**
+	BALL + ( X * ( 100 - HP ) ) + STATUS - CAPTURERATE + HONEY
+	
+		BALL = Changes depending on the ball being thrown.
+			Poké Ball = 0
+			Great Ball = 5
+			Ultra Ball = 10
+			
+			Zone Balls (work specifically for each zone; ???, Net, Dive, Lure, Dusk, ???, ???, Luxury) = 20
+			
+			Specialty Balls = 0 unless:
+			
+				MOON BALL
+					If target is a memver of an evolution family that evolves via Moon Stone = 20
+					
+				LOVE BALL
+					If target is opposite gender of partner = 20
+					
+				FAST BALL
+					If target's speed is greater than 99 = 20
+				
+				REPEAT BALL
+					If Trainer already owns target = 20
+				
+				TIMER BALL
+					BALL = 2 tmes the number of elapsed rounds in current battle
+				
+				HEAVY BALL
+					If target is lighter than 205 KG = -10
+					If target is heavier than 205, KG = 10
+					If target is heavier than 308, KG = 15
+					If target is heavier than 409, KG = 20
+					
+		X applies a weight to the number of HP lost. This changes depending on the capture rate as follows:
+			_________________________________
+			| Capture Rate:     | X becomes  |
+			|--------------------------------|
+			| 10, 11, 12, 13	 |    3      |
+			|--------------------------------|
+			| 14, 15             |    2      |
+			|--------------------------------|
+			| 16, 17, 18         |    1      |
+			|--------------------------------|
+			| 19, 20, 21, 22,    |    .8     |
+			|--------------------------------|
+			| 23, 24, 25, 26     |    .75    |
+			|--------------------------------|
+			| 27, 28, 29, 30     |    .6     |
+			|--------------------------------|
+			| 31, 32, 33         |    .5     |
+			|--------------------------------|
+			| 34, 35, 36, 37     |    .25    |
+			|--------------------------------|
+			| 38, 39, 40, 41     |    .1     |
+			|--------------------------------|
+
+		HP is the amount of HP the target has remaining
+		
+		STATUS changes if the target has a status condition
+			If target is infatuated or confused, = 5
+			If target is paralyzed, burned, or poisoned = 10
+			If target is asleep or frozen = 15
+			
+		CAPTURE RATE = TOTAL (see Pokemon Statisics)
+		
+		HONEY
+			If Honey was used in the last six actions, HONEY is 50. Otherwise, HONEY is 40.
+			
+
+**ADOPTION CENTER PRICES**
+	((AVG * 5)/2)+2
+		AVG = the AVERAGE of the Pokemon's fully evolved form. Branch evolutions were averaged.
+		Pokémon sold in pairs have their original prices added together, with 5 taken off.
+
+**PRIZES**
+
+	BATTLES
+		L*((5*W)+(S*W)+(5*X))
+			W = if Trainer won, W is 2. Otherwise, W is 1.
+			S = if Shiny Pokemon was used, S is 2. Otherwise, S is 0.
+			X = The number of Pokémon knocked out by the individual
+			L = if the battle is a Gym or Tournament Battle, L is 2. Otherwise, L is 1. This does not apply to Gym Leaders battling in their own Gym.
+	
+	GYM BATTLES
+		These only apply to the Leader.
+		
+			Win with 0 rentals: $30 | Lose with 0 rentals: $15
+			Win with 1 rentals: $25 | Lose with 1 rentals: $13
+			Win with 2 rentals: $20 | Lose with 2 rentals: $11
+			Win with 3 rentals: $20 | Lose with 3 rentals: $9
+			Win with 4 rentals: $15 | Lose with 4 rentals: $7
+			Win with 5 rentals: $10 | Lose with 5 rentals: $5
+			Win with 6 rentals: $5  | Lose with 6 rentals: $3
+			
+			
+**WAGES**
+
+	REFEREE/RANGER
+		(2*A) + B + C
+		*per week where rounds are referred
+			A = number of actions judged during that week
+			B = Any and all bonuses earned that week (see: http://www.pokemonelite2000.com/forum/showthread.php?t=111379)
+			C = If A > 0, C = 5
+
+	BUSINESS OWNERS
+		5 * C
+			C = amount of customers per week
+
+	CONTEST JUDGE
+		Judges are paid a flat rate of $30 a Contest.
+
+**ANYTHING ELSE**
+	Either stolen from ASBL 1.0, or tweaked by hand.
+
+If somehow you don't like math and you're still reading, send 3m0d0ll a VM saying thank you, because this was originally the only refereeing document.
